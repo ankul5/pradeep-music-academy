@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Pradeep Paanch's Guitar and keyboard coaching institute</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            margin: 0 0.5rem 1rem;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 100px;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(192, 57, 43, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-text">PRADEEP PAANCH GUITAR & KEYBOARD INSTITUTE</div>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Book</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="menu-backdrop"></div>
+    <div class="menu-overlay">
+        <div class="menu-panel-header">
+            <h3 style="font-size: 1.2rem; font-weight: 900; letter-spacing: 2px;">PRADEEP PAANCH</h3>
+            <p style="font-size: 0.7rem; opacity: 0.8; text-transform: uppercase;">Music Academy Nagpur</p>
+        </div>
+        <div class="nav-links-full">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="services.html"><i class="fas fa-music"></i> Services</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="about.html"><i class="fas fa-user-tie"></i> About</a>
+            <a href="contact.html"><i class="fas fa-calendar-check"></i> Book Class</a>
+        </div>
+        <div class="menu-panel-footer">
+            <p>Connect with us</p>
+            <div class="social-icons-menu">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/918806565063"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header style="padding: 12rem 10% 4rem; text-align: center; background: #fff;">
+        <h1 class="reveal" style="font-size: clamp(3rem, 8vw, 5rem);">Our <span style="color: var(--primary);">Gallery</span></h1>
+        <p class="reveal" style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1rem;">Glimpses of musical growth and joy.</p>
+    </header>
+
+    <section style="padding-bottom: 12rem;">
+        <div style="text-align: center;" class="reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="guitar">Guitar</button>
+            <button class="filter-btn" data-filter="keyboard">Keyboard</button>
+            <button class="filter-btn" data-filter="students">Students</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Guitar -->
+            <div class="gallery-item reveal" data-category="guitar">
+                <img src="images/guitar1.jpeg" alt="Guitar">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="guitar">
+                <img src="images/guitar2.jpeg" alt="Guitar">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="guitar">
+                <img src="images/guitar3.jpeg" alt="Guitar">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="guitar">
+                <img src="images/guitar4.jpg" alt="Guitar">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="guitar">
+                <img src="images/guitar5.jpeg" alt="Guitar">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+
+            <!-- Keyboard -->
+            <div class="gallery-item reveal" data-category="keyboard">
+                <img src="images/keyboard1.jpeg" alt="Keyboard">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="keyboard">
+                <img src="images/keyboard2.jpeg" alt="Keyboard">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="keyboard">
+                <img src="images/keyboard3.jpeg" alt="Keyboard">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+
+            <!-- Students -->
+            <div class="gallery-item reveal" data-category="students">
+                <img src="images/student1.jpeg" alt="Students">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="students">
+                <img src="images/student2.jpeg" alt="Students">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="students">
+                <img src="images/student3.jpg" alt="Students">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item reveal" data-category="students">
+                <img src="images/student4.jpeg" alt="Students">
+                <div class="gallery-overlay"><i class="fas fa-search-plus" style="font-size: 2rem;"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Lightbox">
+    </div>
+
+    <footer>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+            <div>
+                <h3 class="logo" style="color: white; font-size: 1.2rem;">PRADEEP PAANCH'S INSTITUTE</h3>
+                <p style="opacity: 0.7; margin-top: 1rem;">Experience the magic of music.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Connect</h4>
+                <p style="opacity: 0.7;">📍 Plot no 1, Joshi - Sharma layout, main road Gopal nagar nagpur 440022</p>
+                <p style="opacity: 0.7; margin-top: 0.5rem;">📞 8806565063</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = document.querySelector('.close-btn');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    lightboxImg.src = item.querySelector('img').src;
+                    lightbox.style.display = 'flex';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.style.display = 'none'; });
+        });
+    </script>
+</body>
+</html>

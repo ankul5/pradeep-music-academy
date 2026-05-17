@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking | Pradeep Paanch's Guitar and keyboard coaching institute</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-text">PRADEEP PAANCH GUITAR & KEYBOARD INSTITUTE</div>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Book</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="menu-backdrop"></div>
+    <div class="menu-overlay">
+        <div class="menu-panel-header">
+            <h3 style="font-size: 1.2rem; font-weight: 900; letter-spacing: 2px;">PRADEEP PAANCH</h3>
+            <p style="font-size: 0.7rem; opacity: 0.8; text-transform: uppercase;">Music Academy Nagpur</p>
+        </div>
+        <div class="nav-links-full">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="services.html"><i class="fas fa-music"></i> Services</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="about.html"><i class="fas fa-user-tie"></i> About</a>
+            <a href="contact.html"><i class="fas fa-calendar-check"></i> Book Class</a>
+        </div>
+        <div class="menu-panel-footer">
+            <p>Connect with us</p>
+            <div class="social-icons-menu">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/918806565063"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header style="padding: 12rem 10% 4rem; text-align: center; background: #fff;">
+        <h1 class="reveal" style="font-size: clamp(3rem, 8vw, 5rem);">Get In <span style="color: var(--primary);">Touch</span></h1>
+        <p class="reveal" style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1rem;">Reserve your slot at our Gopal Nagar institute.</p>
+    </header>
+
+    <section style="padding: 0 10% 12rem;">
+        <div class="split-container reveal">
+            <div class="split-map">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Plot+no+1,+Joshi+-+Sharma+layout,+main+road+Gopal+nagar+nagpur+440022&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="split-form">
+                <h2 style="margin-bottom: 2rem;">Book a Session</h2>
+                <form id="bookingForm">
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="text" id="name" placeholder="Full Name" style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 1rem;" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="tel" id="phone" placeholder="Phone Number" style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 1rem;" required>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <select id="instrument" style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 1rem;" required>
+                            <option value="" disabled selected>Instrument Interest</option>
+                            <option value="Guitar">Guitar</option>
+                            <option value="Keyboard">Keyboard</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <textarea id="message" placeholder="Message (Optional)" style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 1rem; height: 100px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Book Now
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 4rem auto 0; text-align: center;" class="reveal">
+            <div class="card">
+                <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Gopal Nagar Institute</h3>
+                <p>Plot no 1, Joshi - Sharma layout, main road Gopal nagar nagpur 440022</p>
+                <p style="margin-top: 1rem;"><strong>🕒 Mon - Sat:</strong> 9-11 AM & 5-8 PM</p>
+                <p><strong>📞 8806565063</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+            <div>
+                <h3 class="logo" style="color: white; font-size: 1.2rem;">PRADEEP PAANCH'S INSTITUTE</h3>
+                <p style="opacity: 0.7; margin-top: 1rem;">Nagpur's musical legacy.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Connect</h4>
+                <p style="opacity: 0.7;">📍 Plot no 1, Joshi - Sharma layout, main road Gopal nagar nagpur 440022</p>
+                <p style="opacity: 0.7; margin-top: 0.5rem;">📞 8806565063</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918806565063" class="whatsapp-btn" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; z-index: 9999; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
